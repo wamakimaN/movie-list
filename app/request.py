@@ -29,6 +29,7 @@ def get_news(id):
     return news_articles    
 
 def process_articles(news_list):
+    
     """
     Function that processes the news sources and transforms them to a list of objects
     """
@@ -41,11 +42,11 @@ def process_articles(news_list):
         title = news.get('title')
         description = news.get('description')
         url = news.get('url')
-        imageUrl = news.get('urlToImage')
-        published = news.get('publishedAt')
+        urlToImage = news.get('urlToImage')
+        publishedAt = news.get('publishedAt')
         
-        if imageUrl:
-            news_object = News(author, title, description, url, imageUrl, published)
+        if urlToImage:
+            news_object = News(author, title, description, url, urlToImage, publishedAt)
             news_articles.append(news_object)
           
     return news_articles
