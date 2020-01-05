@@ -4,4 +4,7 @@ from app import app
 
 @app.route('/')
 def index():
-    return '<h1> Hello World </h1>'
+    """
+    view root page function that returns the index page and its data
+    """
+    
