@@ -41,11 +41,11 @@ def process_articles(news_list):
         title = news.get('title')
         description = news.get('description')
         url = news.get('url')
-        urlToImage = news.get('urlToImage')
-        publishedAt = news.get('publishedAt')
+        imageUrl = news.get('urlToImage')
+        published = news.get('publishedAt')
         
-        if urlToImage:
-            news_object = News(author, title, description, url, urlToImage, publishedAt)
+        if imageUrl:
+            news_object = News(author, title, description, url, imageUrl, published)
             news_articles.append(news_object)
           
     return news_articles
