@@ -55,7 +55,7 @@ def get_sources(id):
     
     #Function that gets the json response to our url request
     
-    get_sources_url = news_url.format(id, api_key)
+    get_sources_url = source_url.format(api_key)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -63,8 +63,8 @@ def get_sources(id):
 
         news_sources = None
 
-        if get_sources_response['articles']:
-            news_sources_list = get_sources_response['articles']
+        if get_sources_response['sources']:
+            news_sources_list = get_sources_response['sources']
             news_sources = process_sources(news_sources_list)
                 
     return news_sources
@@ -81,6 +81,6 @@ def process_sources(sources_list):
        
         if id:
             source_object = Source(id, name)
-            news_articles.append(source_object) 
+            news_articles.append(source_object)
                 
     return news_articles 
