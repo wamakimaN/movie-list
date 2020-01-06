@@ -1,34 +1,25 @@
 from flask import render_template
 from app import app
-from .request import get_sources,get_news
+from newsapi import NewsApiClient
 
 @app.route('/')
 def index():
-    """
-    view root page function that returns the index page and its data
-    """
-    bbc = "BBC"
+    newsapi = NewsApiClient(api_key = app.config['NEWS_API_KEY'])
+    topheadlines = newsapi.get_top_headlines(sources="al-jazeera-english")
+    articles = topheadlines['articles']
 
-    cnn = "CNN"
-
-    cnbc = "CNBC"
-
-    aljazeera = "Aljazeera"
-
-    espn = "ESPN"
-
-    bbc_sport = "BBC Sports"
-
-    source_names = []
-
-
-    source_names.append(bbc)
-    source_names.append(cnn)
-    source_names.append(cnbc)
-    source_names.append(aljazeera)
-    source_names.append(espn)
-    source_names.append(bbc_sport)
+    desc = []
+    news = []
+    img = []
+    
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+   
+    mylist = zip(news,desc,img)
 
 
+    return render_template('aljazeera.html', context = mylist)
 
-    return render_template('index.html',bbc = bbc,cnn = cnn,cnbc = cnbc,aljazeera = aljazeera,espn = espn, bbc_sport = bbc_sport,source_names = source_names)
