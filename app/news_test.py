@@ -22,7 +22,7 @@ class SourcesTest(unittest.TestCase):
         """
         setUp method that will run before every test
         """
-        self.new_sources = Source("tmz","tmz-news", "tmz.com")
+        self.new_sources = Source("tmz","tmz-news")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_sources, Source))
