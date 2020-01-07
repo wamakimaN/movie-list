@@ -1,0 +1,36 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-body tx-white bg-dark bd-0">
+        <h1>{{cnn}}</h1>
+      </div>
+      <div class="card card-body tx-white bg-dark bd-0">
+        <h1>{{cnbc}}</h1>
+      </div>
+      <div class="card card-body tx-white bg-dark bd-0">
+        <h1>{{aljazeera}}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-body tx-white bg-dark bd-0">
+        <h1>{{bbc}}</h1>
+      </div>
+      <div class="card card-body tx-white bg-dark bd-0">
+        <h1>{{espn}}</h1>
+      </div>
+      <div class="card card-body tx-white bg-dark bd-0">
+        <h1>{{bbc_sport}}</h1>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+{% for new, des,i in context %}
+
+<img src="{{i}}" alt="">
+<h3>news</h3>{{new}}
+<h3>description</h3>{{des}}
+
+{% endfor %}
