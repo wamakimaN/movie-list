@@ -1,36 +1,40 @@
-<!-- <div class="container">
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
   <div class="row">
     <div class="col-md-4">
       <div class="card card-body tx-white bg-dark bd-0">
-        <h1>{{cnn}}</h1>
+        <h1>Aljazeera</h1>
+        <a href="{{ url_for('aljazeera')}}">visit</a>
       </div>
+    </div>
+    <div class="col-md-4">
       <div class="card card-body tx-white bg-dark bd-0">
-        <h1>{{cnbc}}</h1>
+        <h1>CNBC</h1>
       </div>
+    </div>
+    <div class="col-md-4">
       <div class="card card-body tx-white bg-dark bd-0">
-        <h1>{{aljazeera}}</h1>
+        <h1>CNN</h1>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
       <div class="card card-body tx-white bg-dark bd-0">
-        <h1>{{bbc}}</h1>
+        <h1>BBC</h1>
       </div>
+    </div>
+    <div class="col-md-4">
       <div class="card card-body tx-white bg-dark bd-0">
-        <h1>{{espn}}</h1>
+        <h1>ESPN</h1>
       </div>
+    </div>
+    <div class="col-md-4">
       <div class="card card-body tx-white bg-dark bd-0">
-        <h1>{{bbc_sport}}</h1>
+        <h1>BBC-sports</h1>
       </div>
     </div>
   </div>
-</div> -->
-
-{% for new, des,i in context %}
-
-<img src="{{i}}" alt="">
-<h3>news</h3>{{new}}
-<h3>description</h3>{{des}}
-
-{% endfor %}
+</div>
+{% endblock%}
