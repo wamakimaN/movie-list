@@ -3,6 +3,8 @@
 {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    {{ fontawesome_html() }}
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Kaushan+Script|Poiret+One&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -17,8 +19,8 @@
     </div>
     <div class="col-md-6">
       <div class="card">
-        <h3>news</h3>{{new}}
-        <h3>description</h3>{{des}}
+        <h3>Headline</h3>{{new}}
+        <p>{{des}}</p>
       </div>
     </div>
   </div>
