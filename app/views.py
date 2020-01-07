@@ -12,7 +12,7 @@ def index():
 
 @app.route('/aljazeera')
 def aljazeera():
-    newsapi = NewsApiClient(api_key="c2dc80373e954e7fbd0678a357875019")
+    newsapi = NewsApiClient(api_key = app.config["NEWS_API_KEY"])
     topheadlines = newsapi.get_top_headlines(sources="al-jazeera-english")
     articles = topheadlines['articles']
     desc = []
@@ -25,3 +25,83 @@ def aljazeera():
         img.append(myarticles['urlToImage'])
     mylist = zip(news,desc,img)
     return render_template('aljazeera.html', context = mylist)
+
+@app.route('/cnn')
+def cnn():
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    topheadlines = newsapi.get_top_headlines(sources="cnn")
+    articles = topheadlines['articles']
+    desc = []
+    news = []
+    img = []
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+    mylist = zip(news,desc,img)
+    return render_template('cnn.html', context = mylist)
+
+@app.route('/cnbc')
+def cnbc():
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    topheadlines = newsapi.get_top_headlines(sources="cnbc")
+    articles = topheadlines['articles']
+    desc = []
+    news = []
+    img = []
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+    mylist = zip(news,desc,img)
+    return render_template('cnbc.html', context = mylist)
+
+@app.route('/bbc')
+def bbc():
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    topheadlines = newsapi.get_top_headlines(sources="bbc-news")
+    articles = topheadlines['articles']
+    desc = []
+    news = []
+    img = []
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+    mylist = zip(news,desc,img)
+    return render_template('bbc.html', context = mylist)
+
+@app.route('/espn')
+def espn():
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    topheadlines = newsapi.get_top_headlines(sources="espn")
+    articles = topheadlines['articles']
+    desc = []
+    news = []
+    img = []
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+    mylist = zip(news,desc,img)
+    return render_template('espn.html', context = mylist)
+
+@app.route('/reuters')
+def reuters():
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    topheadlines = newsapi.get_top_headlines(sources="reuters")
+    articles = topheadlines['articles']
+    desc = []
+    news = []
+    img = []
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+    mylist = zip(news,desc,img)
+    return render_template('reuters.html', context = mylist)
