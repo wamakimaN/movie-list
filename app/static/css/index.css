@@ -1,0 +1,48 @@
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+}
+.logo a{
+  letter-spacing: 5px;
+  color: #EF820D;
+  text-decoration: none;
+}
+.logo h4{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Kaushan Script', cursive;
+}
+.logo img{
+  height: 16vh;
+  justify-content: center;
+}
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+.nav-links a{
+  color: #EF820D;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+.nav-links li{
+  list-style: none;
+  font-family: 'Poiret One', cursive;
+}
+ul li.active a{
+  text-shadow: 0px 0px 5px #D7722C;
+  color: white;
+}
+.burger div{
+  background-color: #EF820D;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+}
+.burger{
+  display: none;
+}
