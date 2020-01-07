@@ -18,12 +18,14 @@ def aljazeera():
     desc = []
     news = []
     img = []
+    url = []
     for i in range(len(articles)):
         myarticles = articles[i]
+        url.append(myarticles['url'])
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
-    mylist = zip(news,desc,img)
+    mylist = zip(news,desc,img,url)
     return render_template('aljazeera.html', context = mylist)
 
 @app.route('/cnn')
@@ -34,12 +36,14 @@ def cnn():
     desc = []
     news = []
     img = []
+    url = []
     for i in range(len(articles)):
         myarticles = articles[i]
+        url.append(myarticles['url'])
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
-    mylist = zip(news,desc,img)
+    mylist = zip(news,desc,img,url)
     return render_template('cnn.html', context = mylist)
 
 @app.route('/cnbc')
@@ -50,12 +54,14 @@ def cnbc():
     desc = []
     news = []
     img = []
+    url = []
     for i in range(len(articles)):
         myarticles = articles[i]
+        url.append(myarticles['url'])
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
-    mylist = zip(news,desc,img)
+    mylist = zip(news,desc,img,url)
     return render_template('cnbc.html', context = mylist)
 
 @app.route('/bbc')
@@ -66,12 +72,14 @@ def bbc():
     desc = []
     news = []
     img = []
+    url = []
     for i in range(len(articles)):
         myarticles = articles[i]
+        url.append(myarticles['url'])
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
-    mylist = zip(news,desc,img)
+    mylist = zip(news,desc,img,url)
     return render_template('bbc.html', context = mylist)
 
 @app.route('/espn')
@@ -82,12 +90,14 @@ def espn():
     desc = []
     news = []
     img = []
+    url = []
     for i in range(len(articles)):
         myarticles = articles[i]
+        url.append(myarticles['url'])
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
-    mylist = zip(news,desc,img)
+    mylist = zip(news,desc,img,url)
     return render_template('espn.html', context = mylist)
 
 @app.route('/reuters')
@@ -98,10 +108,12 @@ def reuters():
     desc = []
     news = []
     img = []
+    url = []
     for i in range(len(articles)):
         myarticles = articles[i]
+        url.append(myarticles['url'])
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
-    mylist = zip(news,desc,img)
+    mylist = zip(news,desc,img,url)
     return render_template('reuters.html', context = mylist)
