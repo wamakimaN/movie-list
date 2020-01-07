@@ -1,7 +1,22 @@
-{% for new, des,i in context %}
+{% extends 'base.html'%}
 
-<img src="{{i}}" alt="">
-<h3>news</h3>{{new}}
-<h3>description</h3>{{des}}
-
-{% endfor %}
+{% block content %}
+<div class="container">
+  {% for new, des,i in context %}
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+         <img class="img-thumbnail" src="{{i}}" alt="">
+      </div>
+     
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <h3>news</h3>{{new}}
+        <h3>description</h3>{{des}}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

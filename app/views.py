@@ -28,7 +28,7 @@ def aljazeera():
 
 @app.route('/cnn')
 def cnn():
-    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY"])
     topheadlines = newsapi.get_top_headlines(sources="cnn")
     articles = topheadlines['articles']
     desc = []
@@ -44,7 +44,7 @@ def cnn():
 
 @app.route('/cnbc')
 def cnbc():
-    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY"])
     topheadlines = newsapi.get_top_headlines(sources="cnbc")
     articles = topheadlines['articles']
     desc = []
@@ -60,7 +60,7 @@ def cnbc():
 
 @app.route('/bbc')
 def bbc():
-    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY"])
     topheadlines = newsapi.get_top_headlines(sources="bbc-news")
     articles = topheadlines['articles']
     desc = []
@@ -76,7 +76,7 @@ def bbc():
 
 @app.route('/espn')
 def espn():
-    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY"])
     topheadlines = newsapi.get_top_headlines(sources="espn")
     articles = topheadlines['articles']
     desc = []
@@ -92,7 +92,7 @@ def espn():
 
 @app.route('/reuters')
 def reuters():
-    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY")
+    newsapi = NewsApiClient(api_key= app.config["NEWS_API_KEY"])
     topheadlines = newsapi.get_top_headlines(sources="reuters")
     articles = topheadlines['articles']
     desc = []
