@@ -1,4 +1,4 @@
-#                Pass Locker
+#                News Highlights
 
 An application that aloows user to view the current news headlines from across different sources.
 
